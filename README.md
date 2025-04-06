@@ -21,7 +21,7 @@ This implementation has been rigorously developed following the Test-Driven Deve
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Primo18/ohce_kata.git
 cd ohce_kata
 ```
 
