@@ -26,6 +26,7 @@ class Ohce:
         """
         self.name = name
         self.clock = clock or RealClock()
+        self._running = True
         
     def reverse_echo(self, text):
         """
@@ -71,3 +72,28 @@ class Ohce:
             return f"¡Buenas tardes {self.name}!"
         else:  # 20-23 and 0-5
             return f"¡Buenas noches {self.name}!"
+    
+    def process_input(self, text):
+        """
+        Process user input, handling special commands and normal text.
+        
+        Args:
+            text (str): The user input text
+            
+        Returns:
+            str: The response to the user input
+        """
+        if text == "Stop!":
+            self._running = False
+            return f"Adios {self.name}"
+        
+        return self.reverse_echo(text)
+    
+    def is_running(self):
+        """
+        Check if the application is still running.
+        
+        Returns:
+            bool: True if the application is running, False if it should stop
+        """
+        return self._running
