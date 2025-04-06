@@ -64,3 +64,27 @@ def test_greeting_night():
     
     # Assert
     assert greeting == "¡Buenas noches Pedro!"
+
+def test_stop_command():
+    """Test that recognizes the Stop! command and ends correctly."""
+    # Arrange
+    ohce = Ohce("Pedro")
+    
+    # Act
+    result = ohce.process_input("Stop!")
+    
+    # Assert
+    assert result == "Adios Pedro"
+    assert ohce.is_running() == False
+
+def test_normal_input():
+    """Test that processes a normal input and returns the expected result."""
+    # Arrange
+    ohce = Ohce("Pedro")
+    
+    # Act
+    result = ohce.process_input("hola")
+    
+    # Assert
+    assert result == "aloh"
+    assert ohce.is_running() == True
