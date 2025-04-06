@@ -16,6 +16,9 @@ class Ohce:
     MORNING_END = 12
     AFTERNOON_END = 20
     
+    # Commands
+    STOP_COMMAND = "Stop!"
+    
     def __init__(self, name, clock=None):
         """
         Initialize Ohce with a user name and optional clock.
@@ -83,7 +86,7 @@ class Ohce:
         Returns:
             str: The response to the user input
         """
-        if text == "Stop!":
+        if text == self.STOP_COMMAND:
             self._running = False
             return f"Adios {self.name}"
         
