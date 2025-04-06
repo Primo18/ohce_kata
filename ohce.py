@@ -5,8 +5,11 @@ class Ohce:
     def reverse_echo(self, text):
         reversed_text = text[::-1]
         
-        # If the original text equals the reversed text, it's a palindrome
-        if text == reversed_text:
+        if self._is_palindrome(text):
             return f"{reversed_text}\n¡Bonita palabra!"
         
         return reversed_text
+    
+    def _is_palindrome(self, text):
+        """Check if a text is a palindrome."""
+        return text == text[::-1]
